@@ -31,4 +31,9 @@ public class UserServiceImp implements UserService {
       return userDao.user(model);
    }
 
+   @Override
+   public User getUserBySeries(int series) {
+      return userDao.getUserBySeries(series);
+   }
+
 }

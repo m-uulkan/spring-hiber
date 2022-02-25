@@ -32,4 +32,10 @@ public class UserDaoImp implements UserDao {
       return query.getSingleResult();
    }
 
+   @Override
+   public User getUserBySeries(int series) {
+      TypedQuery<User> query=sessionFactory.openSession().createQuery("from User where car.series=:series").setParameter("series",series);
+      return query.getSingleResult();
+   }
+
 }
